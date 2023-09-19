@@ -1,0 +1,15 @@
+/**
+ * Create a kotlin function that converts an amount from one currency to another
+ * based on a fixed exchange rate. Paste your Github Code Link here
+ */
+
+fun main() {
+    val amountInUSD = 100
+    val phpExchangeRate = 50
+    val convertedAmount = convert(amountInUSD, phpExchangeRate)
+    println("$amountInUSD USD in PHP is $convertedAmount")
+}
+
+fun convert(amountOfUSD: Int, exchangeRate: Int): Int {
+    return amountOfUSD * exchangeRate
+}
