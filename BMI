@@ -1,0 +1,25 @@
+/**
+ * Body Mass Index.
+ * Create a Kotlin function for a BMI calculator, follow these steps:
+ * Define the function that takes two arguments: weight (in kilograms) and height
+ * (in meters)
+ * Calculate the BMI using the formula: BMI = weight / (height * height).
+ * Return the calculated BMI value.
+ */
+
+fun calculateBMI(weightKg: Double, heightM: Double): Double {
+    if (weightKg <= 0.0 || heightM <= 0.0) {
+        throw IllegalArgumentException("Weight and height must be positive values.")
+    }
+
+    val bmi = weightKg / (heightM * heightM)
+    return bmi
+}
+
+fun main() {
+    val weight = 40.5
+    val height = 67.7 / 100.0 // Converting height from centimeters to meters
+    val bmi = calculateBMI(weight, height)
+
+    println("Your BMI is: $bmi")
+}
