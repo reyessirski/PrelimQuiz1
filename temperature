@@ -1,0 +1,48 @@
+/**
+ * Create a kotlin function that converts temperatures between Fahrenheit, Celsius, and Kelvin.
+ */
+
+fun main() {
+    val fah = 40
+    val cel = 30
+    val kel = 20
+    
+    val celfah = celToFah(cel)
+    val kelfah = kelToFah(kel)
+    val fahcel = fahToCel(fah)
+    val celkel = celToKel(cel)
+    val kelcel = kelToCel(kel)
+    val fahkel = fahToKel(fah)
+    
+    println("$cel°C is $celfah°F")
+    println("$kel K is $kelfah°F")
+    println("$fah°F is $fahcel°C")
+    println("$cel°C is $celkel K")
+    println("$kel K is $kelcel°C")
+    println("$fah°F is $fahkel K")
+}
+
+fun celToFah(cel: Int): Int {
+    return (cel * 9 / 5) + 32
+}
+
+fun kelToFah(kel: Int): Int {
+    return (kel - 273) * 9 / 5 + 32
+}
+
+fun fahToCel(fah: Int): Int {
+    return (fah - 32) * 5 / 9
+}
+
+fun celToKel(cel: Int): Int {
+    return cel + 273
+}
+
+fun kelToCel(kel: Int): Int {
+    return kel - 273
+}
+
+fun fahToKel(fah: Int): Int {
+    val cel = fahToCel(fah)
+    return celToKel(cel)
+}
